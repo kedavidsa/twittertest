@@ -36,4 +36,9 @@
         It's time to look for new tweets!
         </div>
     </div>
+    <div class="row" [hidden]="!searchError" >
+        <div class="alert alert-danger width100" role="alert">
+        Error while calling the server
+        </div>
+    </div>
 </div>
