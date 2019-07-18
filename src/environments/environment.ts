@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  twitterUrl:'http://localhost:3000/api/'
+  twitterUrl:'api/'
   
 };
 
