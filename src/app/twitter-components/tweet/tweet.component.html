@@ -1,0 +1,81 @@
+<div class="cardtweet">
+<div class="row">
+    
+    <div class="col" style="word-wrap:break-word">
+        <img class="width100 profileimage" [src]="tweet.user.profile_image_url_https">
+        <span class="fonttitle">{{tweet.user.name}}</span><br>
+        <span class="fontsubtitle">@{{tweet.user.screen_name}}</span>
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col fonttext">
+        {{tweet.text| slice:0:20}}...
+    </div>
+</div>
+<hr/>
+<div class="row">
+        
+    <div class="col text-left">
+        <fa-icon [icon]="['fas', 'reply']"></fa-icon>  
+    </div>
+    <div class="col text-center">
+        <fa-icon [icon]="['fas', 'retweet']"></fa-icon> 
+    </div>
+    <div class="col text-right">
+        <fa-icon [icon]="['fas', 'star']"></fa-icon>
+    </div>
+</div>
+<div class="row cardempty">
+
+</div>
+</div>
+<div class="envelopetwitter width100" [ngClass]="{
+    'envelopetwitterback': !show,
+    'envelopetwitterfront': show
+  }">
+    <div class="row">
+        <div class="col text-center" style="z-index: 60;">
+            <div class="twittericon">
+                <fa-icon [icon]="['fab', 'twitter']"></fa-icon>
+            </div>            
+        </div>        
+    </div> 
+    
+    <div class="moreinfodiv width100">      
+        <div class="row containermoreinfo2" >
+            <div class="col" [hidden]="!show">
+                <br>
+                <hr/>
+                <div class="row">
+                    <div class="col fonttextwhite">
+                        {{tweet.created_at | date:'h:mm a - d MMM y'}}
+                    </div>            
+                </div>   
+                <hr/>
+                <div class="row">
+                    <div class="col fonttextwhite" [innerHTML]="tweet.textHtlm" >
+                        
+                    </div>            
+                </div>
+                <br>
+                <br>
+                <div class="row fonttextwhite">                
+                    <div class="col text-right" (click)="toggleShow()">
+                        <fa-icon [icon]="['fas', 'chevron-up']"></fa-icon>         
+                    </div> 
+                </div>
+            </div>        
+        </div>    
+    </div> 
+    <div class="moreinfodiv width100" [hidden]="show" style="z-index: 61;">
+        <div class="row containermoreinfo">
+            <div class="col text-right fonttextwhite" (click)="toggleShow()">
+                ... más <fa-icon [icon]="['fas', 'chevron-down']"></fa-icon>         
+            </div>       
+        </div>      
+    </div>
+     
+</div>
+
+ 

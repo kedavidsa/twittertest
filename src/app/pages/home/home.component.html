@@ -1,0 +1,39 @@
+<div id="homecontainer" class="container">
+    <div class="row">
+        <form class="form-inline width100" [formGroup]="form"
+        (ngSubmit)="onSubmit()">
+            <div class="form-group width100">
+                <span class="title">Tweet Search</span>
+                <div class="btn-group mx-sm-4 width30">
+                    <input id="search" type="search" placeholder="Search" class="form-control" formControlName="search">                    
+                    <span id="searchclear" class=""><fa-icon [icon]="['fas', 'search']"></fa-icon></span>
+                </div>
+                <small id="searchHelpInline" class="text-muted" *ngIf="search.dirty && search.valid" >
+                Press enter to search
+                </small>
+                <small id="searchErrorInline" *ngIf="search.dirty && search.invalid" >
+                    Solo se aceptan caracteres alfanuméricos
+                </small>
+            </div>
+        </form>
+    </div>
+    <div class="row" infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()">
+        <div class="col-6 col-sm-6 col-md-4 parentcard" *ngFor="let t of tweets">
+            <app-tweet [tweet]="t"></app-tweet>
+        </div>
+        
+    </div>
+    <div class="row" [hidden]="!searchEnd" >
+        <div class="alert alert-light width100" role="alert">
+        There are not more results
+        </div>
+    </div>
+    <div class="row" [hidden]="searchEnd||tweets.length>0" >
+        <div class="alert alert-light width100" role="alert">
+        It's time to look for new tweets!
+        </div>
+    </div>
+</div>

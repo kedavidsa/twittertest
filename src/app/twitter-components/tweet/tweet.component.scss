@@ -1,0 +1,73 @@
+.cardtweet{
+    
+    padding: 15px;
+    box-shadow: 0px 1px 4px 1px #00000085;
+    background-color: white;
+    border-radius: 5px;
+    height:100%;
+    z-index: 50;
+}
+.cardempty{
+    height: 50px;
+}
+.envelopetwitter{
+    position: absolute;
+    bottom: -30px;
+    padding: 0px 30px 0px 0px;
+}
+.envelopetwitterback{    
+    z-index:90;
+}
+.envelopetwitterfront{    
+    z-index:99;
+}
+
+.twittericon{
+    margin: auto;
+    width: fit-content;
+    padding: 0px 15px;
+    background: linear-gradient(180deg, #3c95a9 60%, #a93c7800 40%);
+    font-size: 50px;
+    color: white;
+    border-radius: 45px;
+}
+.moreinfodiv{    
+    position: absolute;    
+    padding: 0px 30px 0px 0px;
+    top:45px;
+}
+
+.containermoreinfo{
+    margin:0px 15px;
+}
+.containermoreinfo2{
+    margin:0px 15px;
+    background-image: linear-gradient(#3c95a9, #51b3c8);
+    box-shadow: 0px 2px 4px #00000085;
+    min-height: 20px;
+    padding:0px 5px;
+}
+
+.fonttitle{
+    color:#777777;
+    font-size:16px;
+    font-weight: bold;
+}
+.fontsubtitle{
+    color:#b4b4b4;
+    font-size:12px;
+}
+.fonttext{
+    color:#a7a7a7;
+    font-size:14px;
+}
+.fonttextwhite{
+    color:#ffffff;
+    font-size:14px;
+}
+.profileimage{
+    border-radius: 10px;
+    float: left;
+    width:  60px;
+    margin-right: 10px;
+}
